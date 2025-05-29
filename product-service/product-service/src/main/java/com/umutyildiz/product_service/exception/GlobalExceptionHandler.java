@@ -14,7 +14,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(exception = ProductNotFoundException.class)
     @ResponseStatus(NOT_FOUND)
     public void handleProductNotFoundException(Exception e){
-        log.info(e.getMessage());
+        log.info(e.getMessage());//todo base response impl
     }
 
 }

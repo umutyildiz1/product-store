@@ -1,5 +1,7 @@
 package com.umutyildiz.product_service.controller;
 
+import com.umutyildiz.product_service.controller.request.GetProductsByBarcodeRequest;
+import com.umutyildiz.product_service.controller.response.GetProductsByBarcodeResponse;
 import com.umutyildiz.product_service.dto.ProductDto;
 import com.umutyildiz.product_service.service.ProductService;
 import jakarta.validation.Valid;
@@ -27,5 +29,15 @@ public class ProductController {
     @GetMapping("/all")
     public ResponseEntity<List<ProductDto>> getProducts(){
         return ResponseEntity.ok(service.getProducts());
+    }
+
+    @GetMapping("/product/{productName}")
+    public ResponseEntity<ProductDto> getProductByName(@PathVariable("productName") String productName){
+        return ResponseEntity.ok(service.getProductByName(productName));
+    }
+
+    @PostMapping("/barcode")
+    public ResponseEntity<GetProductsByBarcodeResponse> getProductsByBarcode(@RequestBody GetProductsByBarcodeRequest request){
+        return ResponseEntity.ok(service.getProductsByBarcode(request));
     }
 }
