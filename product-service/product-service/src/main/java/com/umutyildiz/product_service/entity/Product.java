@@ -15,7 +15,7 @@ public class Product {
     @Column
     private String name;
     @Column
-    private String barcode;
+    private String barcode;//todo add index
     @Column
     private Integer quantity;
 

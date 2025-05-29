@@ -1,3 +1,4 @@
+* pomda kullanılan ortak dependencyleri tek bir maven altında topla
 * logging
 * request interceptor
 * trace id tracing

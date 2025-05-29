@@ -1,0 +1,21 @@
+client:
+  service:
+    product-service:
+      name: 'product-service'
+      path: '/api/v1/product'
+      get-products-path: '/all'
+      get-product-by-name-path: '/product/{productName}'
+      get-products-by-barcode-path: '/barcode'
+
+logging:
+  level:
+    feign: DEBUG
+    com:
+      umutyildiz:
+        store_service:
+          client: DEBUG
+feign:
+  client:
+    config:
+      default:
+        loggerLevel: FULL
